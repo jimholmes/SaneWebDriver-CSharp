@@ -17,13 +17,13 @@ namespace SaneWebDriver_CSharp.A_First_Tests
         {
             // ARRANGE
             IWebDriver browser = new FirefoxDriver();
-            browser.Navigate().GoToUrl("http://demosite.com/KendoGrid.html");
-            //browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
+            browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
 
             // ACT
             IWebElement grid = browser.FindElement(By.Id("grid"));
             // ASSERT
             Assert.IsNotNull(grid);
+
 
             IList<IWebElement> rows = browser.FindElements(By.XPath("//tbody/tr"));
             Assert.IsNotEmpty(rows);
