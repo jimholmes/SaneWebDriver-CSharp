@@ -22,8 +22,7 @@ namespace SaneWebDriver_CSharp.B_Organizing_A_Test
             browser = new FirefoxDriver();
             wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
 
-            browser.Navigate().GoToUrl("http://demosite.com/KendoGrid.html");
-            //browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
+            browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
         }
 
         [OneTimeTearDown]
