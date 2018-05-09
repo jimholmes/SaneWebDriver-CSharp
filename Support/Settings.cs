@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SaneWebDriver_CSharp
+namespace SaneWebDriver_CSharp.Support
+
 {
     public static class Settings
     {

@@ -3,10 +3,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using SaneWebDriver_CSharp.Support;
+
 
 namespace SaneWebDriver_CSharp.C_Starting_To_Structure
 {
@@ -41,7 +40,7 @@ namespace SaneWebDriver_CSharp.C_Starting_To_Structure
         [Test]
         public void create_button_is_on_page()
         {
-            wait.Until(ExpectedConditions.ElementExists(By.Id(ContactGridPageObject.CREATE_BTN_ID)));
+            wait.Until(ExpectedConditions.ElementExists(By.Id( ContactGridPageObject.CREATE_BTN_ID)));
 
         }
 
