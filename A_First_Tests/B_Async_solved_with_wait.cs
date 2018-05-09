@@ -17,8 +17,7 @@ namespace SaneWebDriver_CSharp.A_First_Tests
         public void grid_appears_on_page_and_has_rows() 
         {
             IWebDriver browser = new FirefoxDriver();
-            browser.Navigate().GoToUrl("http://demosite.com/KendoGrid.html");
-            //browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
+            browser.Navigate().GoToUrl("http://jhdemos.azurewebsites.net/KendoGrid.html");
 
             IWebElement grid = browser.FindElement(By.Id("grid"));
             Assert.IsNotNull(grid);
