@@ -71,11 +71,12 @@
     <Compile Include="A_First_Tests\A_Initial_version.cs" />
     <Compile Include="B_Organizing_A_Test\Use_setup_and_teardown.cs" />
     <Compile Include="C_Starting_To_Structure\Can_create_contact.cs" />
-    <Compile Include="D_Using_An_Api\When_editing_a_contact.cs" />
+    <Compile Include="D_Using_An_Api\When_creating_a_contact.cs" />
     <Compile Include="Support\ContactDataObject.cs" />
     <Compile Include="Support\ContactGridPageObject.cs" />
     <Compile Include="C_Starting_To_Structure\Using_page_objects_and_settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\ContactPopUpPageObject.cs" />
     <Compile Include="Support\DataHelpers.cs" />
     <Compile Include="Support\Settings.cs" />
   </ItemGroup>
