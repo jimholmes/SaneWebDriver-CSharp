@@ -42,24 +42,27 @@ namespace SaneWebDriver_CSharp.Support
          * 
          * Did I mention this doesn't save to a database???
          */
-        public static ContactDataObject Store_random_contact_in_db()
+        public static ContactDataObject Create_and_store_random_contact_in_db()
         {
             return Generate_random_contact();
         }
         
         /*
          * This method is a stub. It RETRIVES NOTHING FROM A DATABASE!
-         * It simply returns a Contact object with a fake ID.
+         * It's meant to simulate querying the DB by ID and returning
+         * that contact.
          * 
          * This is just meant to show you how a helper/support library
          * might work.
          * 
          * Did I mention this doesn't get anything from a database???
          */
-        public static ContactDataObject Return_contact_by_id(int id)
+        public static ContactDataObject Return_contact_by_id(ContactDataObject contact)
         {
-            return Generate_random_contact();
+            return contact;
         }
+
+       
 
         /*
          * This method is a stub. It DELETES NOTHING FROM A DATABASE!
@@ -70,7 +73,7 @@ namespace SaneWebDriver_CSharp.Support
          * 
          * Did I mention this doesn't delete anything from a database???
          */
-        public static bool Delete_contact_by_id(int id)
+        public static bool Delete_contact_by_id(ContactDataObject contact)
         {
             return true;
         }

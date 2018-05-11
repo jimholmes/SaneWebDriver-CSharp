@@ -20,6 +20,9 @@ namespace SaneWebDriver_CSharp.Support
         public ContactGridPageObject (IWebDriver browser)
         {
             this.browser = browser;
+            WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementExists(By.Id(CREATE_BTN_ID)));
+            CreateButton = browser.FindElement(By.Id(CREATE_BTN_ID));
         }
 
         public IWebElement GetContactGrid()
@@ -34,7 +37,10 @@ namespace SaneWebDriver_CSharp.Support
 
         public ContactPopUpPageObject GetContactPopUp()
         {
-            return new ContactPopUpPageObject(browser);
+            CreateButton.Click();
+            ContactPopUpPageObject popup =  
+                new ContactPopUpPageObject(browser);
+            return popup;
         }
 
         public IWebElement GetGridRowById(string rowId)
@@ -48,7 +54,7 @@ namespace SaneWebDriver_CSharp.Support
          *              48-Holmes
          * Ergo, we can use the CSS selector id$="Holmes" to match. Yay.
          */
-        public IWebElement GetGridRowByContactName( string contactName)
+        public IWebElement GetGridRowByIdSubstringContactName( string contactName)
         {
             string selector = "tr[id$='" + contactName + "']";
             return browser.FindElement(By.CssSelector(selector));
@@ -60,7 +66,7 @@ namespace SaneWebDriver_CSharp.Support
             return browser.FindElement(By.XPath(contentXpath));
         }
 
-        public bool WaitUntilGridIsPopulatedWithRows()
+        public bool WaitUntilGridIsPopulatedWithRows(IWebDriver browser)
         {
             WebDriverWait wait = new WebDriverWait(browser, TimeSpan.FromSeconds(30));
             wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//tbody/tr")));
